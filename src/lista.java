@@ -66,17 +66,4 @@ public class lista {
         f=q;
     }
 
-    public void InsertarAntes(LocalDate v, int prio, Nodo r) {
-        Nodo q = new Nodo(v, prio);
-        if (r == p) {
-            InsertarInicio(v, prio);
-        } else {
-            q.sig = r;
-            q.ant = r.ant;
-            r.ant = q;
-            q.ant.sig = q;
-        }
-    }
-
-
 }
