@@ -25,6 +25,8 @@ void main() {
 
         switch (op) {
             case 1:
+                lista.inicializar();
+                System.out.println("Lista inicializada ");
                 break;
             case 2:
                 break;
@@ -62,6 +64,29 @@ void main() {
                 }
                 break;
             case 5:
+                System.out.print("Prioridad a eliminar (1 o 2) ");
+                prio = sc.nextInt();
+
+                if (prio == 1) {
+                    if (lista.eliminar(null, prio)) {
+                        System.out.println(" fecha de prioridad 1 eliminada (Cola)");
+                    } else {
+                        System.out.println("No hay elementos de prioridad 1 para eliminar.");
+                    }
+                }// PRIORIDAD 2
+                else if (prio == 2) {
+                    System.out.print("Fecha a eliminar (dd/MM/yyyy): ");
+                    texto = sc.next();
+                    v = LocalDate.parse(texto, formato);
+
+                    if (lista.eliminar(v, prio)) {
+                        System.out.println("fecha de prioridad 2 eliminada correctamente.");
+                    } else {
+                        System.out.println("fecha no encontrada, no procede la operacion.");
+                    }
+                } else {
+                    System.out.println("prioridad invalida");
+                }
                 break;
             case 6:
                 break;

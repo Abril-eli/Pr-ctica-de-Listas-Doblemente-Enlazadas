@@ -144,6 +144,70 @@ public class lista {
         u1 = null;
     }
 
+    public boolean eliminar(LocalDate v, int prio) {
+        if (p == null) {
+            return false;
+        }
+
+        // PRIORIDAD 1
+        if (prio == 1) {
+            if (u1 == null) {
+                return false;
+            }
+            Nodo aBorrar = p;
+
+            if (p == u1) {
+
+                p = p.sig;
+                if (p != null) {
+                    p.ant = null;
+                } else {
+                    f = null;
+                }
+                u1 = null;
+            } else {
+
+                p = p.sig;
+                p.ant = null;
+            }
+
+            aBorrar.sig = null;
+            aBorrar.ant = null;
+            return true;
+        }
+
+        // PRIORIDAD 2
+        if (prio == 2) {
+
+            Nodo aBorrar = buscar(v, prio);
+
+            if (aBorrar == null) {
+                return false;
+            }
+
+
+            if (aBorrar == p && aBorrar == f) {
+                p = null;
+                f = null;
+            } else if (aBorrar == p) {
+                p = p.sig;
+                p.ant = null;
+            } else if (aBorrar == f) {
+                f = f.ant;
+                f.sig = null;
+            } else {
+
+                aBorrar.ant.sig = aBorrar.sig;
+                aBorrar.sig.ant = aBorrar.ant;
+            }
+
+            aBorrar.sig = null;
+            aBorrar.ant = null;
+            return true;
+        }
+        return false;
+    }
+
 
 
 
