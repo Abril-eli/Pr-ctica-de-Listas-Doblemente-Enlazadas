@@ -1,7 +1,8 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class lista {
-
+    Scanner sc = new Scanner(System.in);
     Nodo p = null;
     Nodo f = null;
     Nodo u1 = null; //ultimo nodo de la prioridad 1
@@ -65,7 +66,17 @@ public class lista {
         f=q;
     }
 
-
+    public void InsertarAntes(LocalDate v, int prio, Nodo r) {
+        Nodo q = new Nodo(v, prio);
+        if (r == p) {
+            InsertarInicio(v, prio);
+        } else {
+            q.sig = r;
+            q.ant = r.ant;
+            r.ant = q;
+            q.ant.sig = q;
+        }
+    }
 
 
 }
