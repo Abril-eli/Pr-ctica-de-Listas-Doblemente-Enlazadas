@@ -130,5 +130,21 @@ public class lista {
         return true;
     }
 
+    public void inicializar() {
+        Nodo actual = p;
+        while (actual != null) {
+            Nodo siguiente = actual.sig;
+            actual.sig = null;
+            actual.ant = null;
+            actual.info = null;
+            actual = siguiente;
+        }
+        p = null;
+        f = null;
+        u1 = null;
+    }
+
+
+
 
 }
