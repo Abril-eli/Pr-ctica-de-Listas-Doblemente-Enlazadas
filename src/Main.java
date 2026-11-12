@@ -108,7 +108,7 @@ void main() {
                 lista.modificar(fechaVieja, fechaNueva, prioridad);
                 break;
             case 7:
-                System.out.printf("---CREDITOS---");
+                System.out.println("---CREDITOS---");
                 System.out.println("Nombre: Sebastian Chavarria Gomez");
                 System.out.println("Materia: Estructura de Datos");
                 System.out.println("Matricula: 24170144");
