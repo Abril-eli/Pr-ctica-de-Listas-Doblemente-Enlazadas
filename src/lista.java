@@ -212,7 +212,7 @@ public class lista {
     public void mostrarLista(String res) {
 
         if (p == null) {
-            System.out.println("Lista vacía");
+            System.out.println("Lista vacia");
             return;
         }
         DateTimeFormatter formato =
@@ -229,16 +229,13 @@ public class lista {
             System.out.println("No se pudo localizar la fecha");
             return false;
         }
-        // Validar rango
         if (fechaNueva.isBefore(min) || fechaNueva.isAfter(max)) {
-            System.out.println("La nueva fecha está fuera de rango");
+            System.out.println("La nueva fecha esta fuera de rango");
             return false;
         }
         if (prio == 1) {
-            // Conserva la posición
             n.info = fechaNueva;
         } else {
-            // Mantiene el orden
             eliminar(fechaVieja, 2);
             insertar(fechaNueva, 2);
         }
