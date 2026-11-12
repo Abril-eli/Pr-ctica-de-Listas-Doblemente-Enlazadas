@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -106,6 +107,19 @@ void main() {
                 lista.modificar(vieja, nueva, prioridad);
                 break;
             case 7:
+                System.out.printf("---CREDITOS---");
+                System.out.println("Nombre: Sebastian Chavarria Gomez");
+                System.out.println("Materia: Estructura de Datos");
+                System.out.println("Matricula: 24170144");
+                System.out.println("---------------------------");
+                System.out.println("Nombre: Saul Abimael Ochoa Gonzalez");
+                System.out.println("Materia: Estructura de Datos");
+                System.out.println("Matricula: ");
+                System.out.println("---------------------------");
+                System.out.println("Nombre: Abril Elizabeth Guillen Vargas");
+                System.out.println("Materia: Estructura de Datos");
+                System.out.println("Matricula: ");
+
                 break;
         }
     } while (op != 0);
