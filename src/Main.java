@@ -31,7 +31,7 @@ void main() {
                 break;
             case 2:
                 sc.nextLine();
-                System.out.print("¿Mostrar de inicio a final? (si/no): ");
+                System.out.print("Mostrar de inicio a final? (si/no): ");
                 String res = sc.nextLine();
 
                 lista.mostrarLista(res);
@@ -115,11 +115,11 @@ void main() {
                 System.out.println("---------------------------");
                 System.out.println("Nombre: Saul Abimael Ochoa Gonzalez");
                 System.out.println("Materia: Estructura de Datos");
-                System.out.println("Matricula: ");
+                System.out.println("Matricula:25420046 ");
                 System.out.println("---------------------------");
                 System.out.println("Nombre: Abril Elizabeth Guillen Vargas");
                 System.out.println("Materia: Estructura de Datos");
-                System.out.println("Matricula: ");
+                System.out.println("Matricula: 25420166");
 
                 break;
         }
