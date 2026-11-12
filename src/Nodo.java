@@ -13,5 +13,15 @@ public class Nodo {
         this.sig = null;
         this.ant = null;
     }
+
+    @Override
+    public String toString() {
+        return "Nodo{" +
+                "info=" + info +
+                ", prioridad=" + prioridad +
+                ", sig=" + sig +
+                ", ant=" + ant +
+                '}';
+    }
 }
 

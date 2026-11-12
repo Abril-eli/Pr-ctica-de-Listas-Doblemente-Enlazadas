@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -67,6 +69,7 @@ public class lista {
         }
         f = q;
     }
+
     public boolean insertar(LocalDate v, int prio) {
 
         if (v.isBefore(LocalDate.of(1980, 1, 1)) || v.isAfter(LocalDate.of(2030, 12, 31))) {
@@ -111,8 +114,7 @@ public class lista {
                 r.ant.sig = q;
                 r.ant = q;
             }
-        }
-        else {
+        } else {
             Nodo r = f;
             while (r != null && r.prioridad == 2 && r.info.isAfter(v)) {
                 r = r.ant;
@@ -209,6 +211,7 @@ public class lista {
         }
         return false;
     }
+
     public void mostrarLista(String res) {
 
         if (p == null) {
@@ -218,11 +221,14 @@ public class lista {
         DateTimeFormatter formato =
                 DateTimeFormatter.ofPattern("dd/MM/yyyy");
         Nodo t = res.equalsIgnoreCase("si") ? p : f;
+        System.out.println("Prio 1: ");
         while (t != null) {
             System.out.println(t.info.format(formato));
             t = res.equalsIgnoreCase("si") ? t.sig : t.ant;
+            System.out.println("Prio 2: ");
         }
     }
+
     public boolean modificar(LocalDate fechaVieja, LocalDate fechaNueva, int prio) {
         Nodo n = buscar(fechaVieja, prio);
         if (n == null) {
@@ -242,4 +248,4 @@ public class lista {
         System.out.println("Fecha modificada correctamente");
         return true;
     }
-    }
+}
