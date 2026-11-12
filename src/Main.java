@@ -29,6 +29,10 @@ void main() {
                 System.out.println("Lista inicializada ");
                 break;
             case 2:
+                System.out.print("¿Mostrar de inicio a final? (si/no): ");
+                String res = sc.nextLine();
+
+                lista.mostrarLista(res);
                 break;
             case 3:
                 System.out.print("Fecha a buscar (dd/MM/yyyy): ");
@@ -89,6 +93,17 @@ void main() {
                 }
                 break;
             case 6:
+                System.out.print("Fecha a modificar: ");
+                LocalDate vieja = LocalDate.parse(sc.nextLine());
+
+                System.out.print("Nueva fecha: ");
+                LocalDate nueva = LocalDate.parse(sc.nextLine());
+
+                System.out.print("Prioridad (1 o 2): ");
+                int prioridad = sc.nextInt();
+                sc.nextLine();
+
+                lista.modificar(vieja, nueva, prioridad);
                 break;
             case 7:
                 break;

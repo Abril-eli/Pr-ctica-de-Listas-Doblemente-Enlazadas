@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class lista {
     Nodo p = null;
@@ -208,7 +209,39 @@ public class lista {
         return false;
     }
 
+    Scanner sc = new Scanner(System.in);
 
-
-
-}
+    public void mostrarLista(String res) {
+        if (p == null) {
+            System.out.println("Lista vacía");
+            return;
+        }
+        Nodo t = p;
+        while (t != null) {
+            System.out.println(t.info);
+            t = res.equalsIgnoreCase("si") ? t.sig : t.ant;
+        }
+    }
+    public boolean modificar(LocalDate fechaVieja, LocalDate fechaNueva, int prio) {
+        Nodo n = buscar(fechaVieja, prio);
+        if (n == null) {
+            System.out.println("No se pudo localizar la fecha");
+            return false;
+        }
+        // Validar rango
+        if (fechaNueva.isBefore(min) || fechaNueva.isAfter(max)) {
+            System.out.println("La nueva fecha está fuera de rango");
+            return false;
+        }
+        if (prio == 1) {
+            // Conserva la posición
+            n.info = fechaNueva;
+        } else {
+            // Mantiene el orden
+            eliminar(fechaVieja, 2);
+            insertar(fechaNueva, 2);
+        }
+        System.out.println("Fecha modificada correctamente");
+        return true;
+    }
+    }
