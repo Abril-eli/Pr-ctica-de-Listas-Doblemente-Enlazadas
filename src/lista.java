@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class lista {
@@ -208,17 +209,17 @@ public class lista {
         }
         return false;
     }
-
-    Scanner sc = new Scanner(System.in);
-
     public void mostrarLista(String res) {
+
         if (p == null) {
             System.out.println("Lista vacía");
             return;
         }
-        Nodo t = p;
+        DateTimeFormatter formato =
+                DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Nodo t = res.equalsIgnoreCase("si") ? p : f;
         while (t != null) {
-            System.out.println(t.info);
+            System.out.println(t.info.format(formato));
             t = res.equalsIgnoreCase("si") ? t.sig : t.ant;
         }
     }
